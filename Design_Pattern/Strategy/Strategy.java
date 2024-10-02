@@ -1,21 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package strategy;
 
-/**
- *
- * @author João Victor
- */
 public class Strategy {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        CalculoMedia calculo = new Aritmetica();
+        Disciplina disciplina = new Disciplina(calculo);
+        disciplina.setNome("Padrões de Desenvolvimento");
+        disciplina.setP1(10);
+        disciplina.setP2(5);
+        disciplina.CalcularMedia();
+        
+        System.out.println(String.format("P1:%.2f P2:%.2f Media:%.2f  Situação: %s", 
+            disciplina.getP1(), disciplina.getP2(), disciplina.getMedia(), disciplina.getSituacao()));
+        
+        calculo = new Geometrica();
+        disciplina = new Disciplina(calculo);
+        disciplina.setP1(10);
+        disciplina.setP2(5);
+        disciplina.CalcularMedia();
+        
+        System.out.println(String.format("P1:%.2f P2:%.2f Media:%.2f  Situação: %s", 
+            disciplina.getP1(), disciplina.getP2(), disciplina.getMedia(), disciplina.getSituacao()));
     }
-    
 }
