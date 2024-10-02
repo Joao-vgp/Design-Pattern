@@ -1,14 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package strategy;
 
-/**
- *
- * @author João Victor
- */
-public class Geometrica {
+public class Geometrica implements CalculoMedia {
+    @Override
+    public double calcular(double p1, double p2) {
+        return Math.sqrt(p1 * p2); 
+    }
     
+    @Override
+    public String verificarAprovacao(double media) {
+        return media > 7.0 ? "Aprovado!" : "Reprovado";
+    }
 }
